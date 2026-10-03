@@ -1,3 +1,12 @@
+// 音频控制
+const bgMusic = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+let isPlaying = false;
+musicBtn.addEventListener('click', () => {
+    if (isPlaying) { bgMusic.pause(); musicBtn.textContent = '🔇'; isPlaying = false; }
+    else { bgMusic.play().then(() => { musicBtn.textContent = '🔊'; isPlaying = true; }).catch(() => {}); }
+});
+
 // Cursor following effect
 const cursor = document.querySelector('.cursor');
 document.addEventListener('mousemove', (e) => {
@@ -6,7 +15,7 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Typing effect for greeting
-const greetingText = "Hey You Know What! You're the most adorable human i ever met! 💖";
+const greetingText = "祝你生日快乐！愿你每一天都充满阳光与欢笑 ✨";
 const greetingElement = document.querySelector('.greeting');
 let charIndex = 0;
 

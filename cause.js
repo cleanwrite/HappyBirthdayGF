@@ -1,25 +1,9 @@
- // Reasons database
+ // 祝福语列表
  const reasons = [
-    { 
-        text: "You’re such a kind and wonderful person, and I feel lucky to share such a good bond with you. 💖", 
-        emoji: "🌟",
-        gif: "gif1.gif"
-    },
-    { 
-        text: "May your day be filled with love, laughter, and endless joy. 🌸 ", 
-        emoji: "💗",
-        gif: "gif2.gif"
-    },
-    { 
-        text: "Wishing you success, happiness, and everything your heart desires. ✨ ", 
-        emoji: "💕",
-        gif: "gif1.gif"
-    },
-    { 
-        text: "Stay the amazing girl you are—always spreading positivity around. Have the happiest year ahead! 🥳 ", 
-        emoji: "🌟",
-        gif: "gif2.gif"
-    }
+    { text: "你是我最重要的人，有你在的日子都闪闪发光 💖", emoji: "🌟", gif: "gif1.gif" },
+    { text: "愿你被这个世界温柔以待，所有的美好都如期而至 🌸", emoji: "💗", gif: "gif2.gif" },
+    { text: "新的一岁，愿你心想事成，万事胜意 ✨", emoji: "💕", gif: "gif1.gif" },
+    { text: "永远保持你那灿烂的笑容，感染身边的每一个人 🥳", emoji: "🌟", gif: "gif2.gif" }
 ];
 
 // State management
@@ -65,7 +49,7 @@ function displayNewReason() {
         reasonsContainer.appendChild(card);
         
         // Update counter
-        reasonCounter.textContent = `Reason ${currentReasonIndex + 1} of ${reasons.length}`;
+        reasonCounter.textContent = `${currentReasonIndex + 1} / ${reasons.length}`;
         
         currentReasonIndex++;
 
@@ -76,7 +60,7 @@ function displayNewReason() {
                 duration: 0.5,
                 ease: "elastic.out",
                 onComplete: () => {
-                    shuffleButton.textContent = "Enter Our Storylane 💫";
+                    shuffleButton.textContent = "查看美好回忆 💫";
                     shuffleButton.classList.add('story-mode');
                     shuffleButton.addEventListener('click', () => {
                         gsap.to('body', {
